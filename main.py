@@ -9,6 +9,10 @@ import requests
 # https://pypi.org/project/beautifulsoup4/
 # https://docs.python.org/3/library/json.html
 # https://www.routech.ro/tutorial-web-scraping-python-cum-sa-scrapati-datele-de-pe-un-site-web/
+#  https://docs.python-requests.org/en/latest/
+#  https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+#  https://docs.python.org/3/library/time.html
+#  https://docs.python.org/3/library/re.html
 
 
 base_url = "https://www.elefant.ro/filter/1?PageNumber={}&PageSize=60&SortingAttribute=bestseller-desc&ViewType=&SearchTerm=star+wars&SearchParameter=%26%40QueryTerm%3Dstar%2Bwars%26AvailableFlag%3D1%26isMaster%3D0"
