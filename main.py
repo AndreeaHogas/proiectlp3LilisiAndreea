@@ -50,6 +50,8 @@ while current_page <= 13:
                 result["price"] = format_info(info)
             elif info.startswith("'brand'"):
                 result["brand"] = format_info(info)
+            elif info.startswith("'<div>author</div>==$0'"):
+                result["<div>author</div>==$0"] = format_info(info)
             elif "'category'" in info and "'Carti\\/Carte straina\\/Fiction & related items\\/Science fiction'" in info:
                 result["category"] = format_info(info)
             elif "'category'" in info and "'Carti\\/Carte straina\\/Fiction & related items'" in info:
@@ -57,11 +59,7 @@ while current_page <= 13:
             elif "'category'" in info and "'Carti\\/Carte straina\\/Children\\'s, Teenage & Educational'" in info:
                 result["category"] = "Carti/Carte straina/Children's, Teenage & Educational"
             elif "'product-sold-out'" in info:
-                return None
-              # se extrage numele autorului
-        author_element = soup.find("a", class_="product-manufacturer")
-        if author_element and author_element.div:
-            result["author"] = author_element.div.get_text().strip()
+                return Non
 
         return result
      # se extrag informațiile potrivite despre carti
