@@ -37,14 +37,14 @@ while current_page <= 13:
                 result["price"] = format_info(info)
             elif info.startswith("'<div>author</div>==$0'"):
                 result["<div>author</div>==$0"] = format_info(info)
+            elif info.startswith("'brand'"):
+                result["brand"] = format_info(info)
             elif "'category'" in info and "'Carti\\/Carte straina\\/Fiction & related items\\/Science fiction'" in info:
                 result["category"] = format_info(info)
             elif "'category'" in info and "'Carti\\/Carte straina\\/Fiction & related items'" in info:
                 result["category"] = "Carti/Carte straina/Fiction & related items"
             elif "'category'" in info and "'Carti\\/Carte straina\\/Children\\'s, Teenage & Educational'" in info:
                 result["category"] = "Carti/Carte straina/Children's, Teenage & Educational"
-            elif info.startswith("'brand'"):
-                result["brand"] = format_info(info)
             elif "'product-sold-out'" in info:
                 return None
         return result
