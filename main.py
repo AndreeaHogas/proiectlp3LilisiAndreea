@@ -21,7 +21,7 @@ base_url = "https://www.elefant.ro/filter/1?PageNumber={}&PageSize=60&SortingAtt
 # se inițializează numărul paginii curente
 current_page = 1
 
-# se inițializează numărul paginii curente
+# se definește o listă goală în care vor fi stocate cărțile
 cartii = []
 
 # incepând de la prima pagină și continuând până la a 13-a pagină
@@ -64,7 +64,7 @@ while current_page <= 13:
             result["author"] = author_element.div.get_text().strip()
 
         return result
-     # se extrag informațiile despre cărți din fiecare obiect JSON
+     # se extrag informațiile potrivite despre carti
     for match in matches:
         book = extract_data(match)
         if book is not None and "category" in book:
