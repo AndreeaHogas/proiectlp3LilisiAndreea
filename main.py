@@ -4,8 +4,11 @@ import time
 from bs4 import BeautifulSoup
 import requests
 
-
 # https://youtube.com/playlist?list=PLzMcBGfZo4-n40rB1XaJ0ak1bemvlqumQ
+# https://realpython.com/beautiful-soup-web-scraper-python/
+# https://pypi.org/project/beautifulsoup4/
+# https://docs.python.org/3/library/json.html
+
 
 base_url = "https://www.elefant.ro/filter/1?PageNumber={}&PageSize=60&SortingAttribute=bestseller-desc&ViewType=&SearchTerm=star+wars&SearchParameter=%26%40QueryTerm%3Dstar%2Bwars%26AvailableFlag%3D1%26isMaster%3D0"
 current_page = 1
@@ -31,8 +34,8 @@ while current_page <= 13:
                 result["title"] = format_info(info)
             elif info.startswith("'price'"):
                 result["price"] = format_info(info)
-            elif info.startswith("'producttitleloader'"):
-                result["producttitleloader"] = format_info(info)
+            elif info.startswith("'<div>author</div>==$0'"):
+                result["<div>author</div>==$0"] = format_info(info)
             elif "'category'" in info and "'Carti\\/Carte straina\\/Fiction & related items\\/Science fiction'" in info:
                 result["category"] = format_info(info)
             elif "'category'" in info and "'Carti\\/Carte straina\\/Fiction & related items'" in info:
